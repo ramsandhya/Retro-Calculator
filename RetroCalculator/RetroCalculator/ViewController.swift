@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         } catch let err as NSError {
             print(err.debugDescription)
         }
+        outputLabel.text = "0"
     }
     
     @ IBAction func numberPressed(sender: UIButton){
@@ -52,6 +53,28 @@ class ViewController: UIViewController {
         outputLabel.text = runningNumber
     }
     
+    @IBAction func onDividePressed(_ sender: AnyObject) {
+        processOperation(operation: .Divide)
+    }
+    
+    @IBAction func onMultiplyPressed(_ sender: AnyObject) {
+        processOperation(operation: .Multiply)
+    }
+
+    @IBAction func onSubtractPressed(_ sender: AnyObject) {
+        processOperation(operation: .Subtract)
+    }
+
+    @IBAction func onAddPressed(_ sender: AnyObject) {
+        processOperation(operation: .Add)
+    }
+
+    @IBAction func onEqualPressed(_ sender: AnyObject) {
+        processOperation(operation: currentOperation )
+    }
+    
+    
+    
     func playSound() {
         if btnSound.isPlaying {
             btnSound.stop()
@@ -60,6 +83,7 @@ class ViewController: UIViewController {
     }
 
     func processOperation(operation: Operation) {
+        playSound()
         if currentOperation != Operation.Empty {
             if runningNumber != "" {
                 rightValStr = runningNumber
@@ -82,7 +106,7 @@ class ViewController: UIViewController {
         }else {
             leftValStr = runningNumber
             runningNumber = ""
-            currentOperation = operation 
+            currentOperation = operation
         }
     }
 }

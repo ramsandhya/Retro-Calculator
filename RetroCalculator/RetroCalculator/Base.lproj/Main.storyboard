@@ -156,6 +156,9 @@
                                                     <constraint firstAttribute="height" constant="60" id="BZf-DN-v4h"/>
                                                 </constraints>
                                                 <state key="normal" image="divide"/>
+                                                <connections>
+                                                    <action selector="onDividePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8IC-a4-xOe"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rky-e4-iMT">
                                                 <constraints>
@@ -163,6 +166,9 @@
                                                     <constraint firstAttribute="height" constant="60" id="YJa-qp-Pdc"/>
                                                 </constraints>
                                                 <state key="normal" image="multiply"/>
+                                                <connections>
+                                                    <action selector="onMultiplyPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CsL-Rq-OT1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -174,6 +180,9 @@
                                                     <constraint firstAttribute="width" constant="58" id="WCd-Yf-mVn"/>
                                                 </constraints>
                                                 <state key="normal" image="subtract"/>
+                                                <connections>
+                                                    <action selector="onSubtractPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TZQ-mj-7aI"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SL-J4-2hO">
                                                 <constraints>
@@ -181,6 +190,9 @@
                                                     <constraint firstAttribute="height" constant="60" id="6s2-z6-ihi"/>
                                                 </constraints>
                                                 <state key="normal" image="add"/>
+                                                <connections>
+                                                    <action selector="onAddPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zVi-HD-4sE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNm-oF-fEd">
                                                 <constraints>
@@ -188,6 +200,9 @@
                                                     <constraint firstAttribute="width" constant="58" id="mTq-mj-sUc"/>
                                                 </constraints>
                                                 <state key="normal" image="equal"/>
+                                                <connections>
+                                                    <action selector="onEqualPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wcc-gj-BcI"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
