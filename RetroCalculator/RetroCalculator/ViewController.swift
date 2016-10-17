@@ -11,13 +11,11 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var outputLabel: UILabel!
-    
     var btnSound: AVAudioPlayer!
     
-    var runningNumber = ""
+    @IBOutlet weak var outputLabel: UILabel!
     
-    var currentOperation = Operation.Empty
+    var runningNumber = ""
     
     enum Operation: String {
         case Divide = "/"
@@ -27,8 +25,9 @@ class ViewController: UIViewController {
         case Empty = "Empty"
     }
     
-    var leftVarStr = ""
-    var rightVarStr = ""
+    var currentOperation = Operation.Empty
+    var leftValStr = ""
+    var rightValStr = ""
     var result = ""
     
     
@@ -63,20 +62,27 @@ class ViewController: UIViewController {
     func processOperation(operation: Operation) {
         if currentOperation != Operation.Empty {
             if runningNumber != "" {
-                rightVarStr = runningNumber
+                rightValStr = runningNumber
                 runningNumber = ""
                 
                 if currentOperation == Operation.Multiply {
-                
+                    result = "\(Double(leftValStr)! * Double(rightValStr)!)"
                 } else if currentOperation == Operation.Divide {
-                
+                    result = "\(Double(leftValStr)! / Double(rightValStr)!)"
                 } else if currentOperation == Operation.Subtract {
-                
+                    result = "\(Double(leftValStr)! - Double(rightValStr)!)"
                 } else if currentOperation == Operation.Add {
-                    
+                    result = "\(Double(leftValStr)! + Double(rightValStr)!)"
                 }
                 
+                leftValStr = result
+                outputLabel.text = result
             }
+            currentOperation = operation
+        }else {
+            leftValStr = runningNumber
+            runningNumber = ""
+            currentOperation = operation 
         }
     }
 }
