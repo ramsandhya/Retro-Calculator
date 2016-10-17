@@ -11,7 +11,26 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var outputLabel: UILabel!
+    
     var btnSound: AVAudioPlayer!
+    
+    var runningNumber = ""
+    
+    var currentOperation = Operation.Empty
+    
+    enum Operation: String {
+        case Divide = "/"
+        case Multiply = "*"
+        case Subtract = "-"
+        case Add = "+"
+        case Empty = "Empty"
+    }
+    
+    var leftVarStr = ""
+    var rightVarStr = ""
+    var result = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +48,9 @@ class ViewController: UIViewController {
     
     @ IBAction func numberPressed(sender: UIButton){
         playSound()
+        
+        runningNumber += "\(sender.tag)"
+        outputLabel.text = runningNumber
     }
     
     func playSound() {
@@ -38,5 +60,24 @@ class ViewController: UIViewController {
          btnSound.play()
     }
 
+    func processOperation(operation: Operation) {
+        if currentOperation != Operation.Empty {
+            if runningNumber != "" {
+                rightVarStr = runningNumber
+                runningNumber = ""
+                
+                if currentOperation == Operation.Multiply {
+                
+                } else if currentOperation == Operation.Divide {
+                
+                } else if currentOperation == Operation.Subtract {
+                
+                } else if currentOperation == Operation.Add {
+                    
+                }
+                
+            }
+        }
+    }
 }
 
